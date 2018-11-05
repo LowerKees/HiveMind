@@ -14,9 +14,10 @@ namespace HiveMind
   {
     public static void Main(string[] args)
     {
-      var host = new WebHostBuilder().UseKestrel().UseStartup<Startup>().Build();
-
-      host.Run();
+      CreateWebHostBuilder(args).Build().Run();
     }
+
+    private static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+      WebHost.CreateDefaultBuilder(args).UseStartup<Startup>();
   }
 }

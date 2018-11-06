@@ -28,18 +28,30 @@ namespace HiveMind
 
 		public void ConfigureServices(IServiceCollection services)
 		{
-			services.AddMvcCore();
+			var logger = _loggerFactory.CreateLogger<Startup>();
+
+			if (_env.IsDevelopment())
+			{
+				// Development service configuration
+				logger.LogInformation("Development environment");
+			}
+			else
+			{
+				// Non-development service configuration
+				logger.LogInformation($"Environment: {_env.EnvironmentName}");
+			}
+
+			// Add framework services
+			services.AddMvc();
 		}
 
 		public void Configure(IApplicationBuilder application, IHostingEnvironment env)
 		{
-			application.UseDirectoryBrowser();
-
 			application.UseMvc(routes =>
 			{
 				routes.MapRoute(
 			name: "default",
-			template: "{controller=HomeController}/{action=Index}/{id?}");
+			template: "{controller=Home}/{action=Index}/{id?}");
 			});
 		}
 	}

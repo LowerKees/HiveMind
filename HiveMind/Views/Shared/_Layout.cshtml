@@ -4,25 +4,38 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>@ViewData["Title"] - HiveMind</title>
-	<base href="~/" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="@Url.Content("~/css/HiveMind-Styles.css")" />
 </head>
 <body>
-	<nav>
-		<!-- make it navbar class instead of nav-->
-		<ul class="nav nav-tabs">
-			<li class="nav-item">
-				<a class="nav-link" href="#">Home</a>
-			</li>
-			<li class="nav-item dropdown">
-				<div class="dropdown-menu">
-					<a class="nav-link" href="#">Home</a>
-					<a class="nav-link" href="#">Home</a>
-					<a class="nav-link" href="#">Home</a>
-				</div>
-			</li>
-		</ul>
-	</nav>
+	<!-- wrap the nav in a container for centering-->
+	<div class="container">
+		<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="nav navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="@Url.Action("Index","Home")">
+							<p>Home</p>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="@Url.Action("Blog","Blog")">
+							<p>Blog</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<ul class="navbar">
+				<li class="navbar-brand">
+					<img src="#" alt="HiveMind logo" width="30" height="30" />
+				</li>
+			</ul>
+		</nav>
+	</div>
 	<main>
 		@RenderBody()
 	</main>

@@ -5,7 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>@ViewData["Title"] - HiveMind</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<link rel="stylesheet" href="@Url.Content("~/css/HiveMind-Styles.css")" />
+	<link rel="stylesheet" href="@Url.Content("~/css/HiveMind-Styles.css")" type="text/css" />
+	<style>
+		.nav-link {
+			font-family: 'Times New Roman';
+		}
+	</style>
 </head>
 <body>
 	<!-- wrap the nav in a container for centering-->
@@ -27,13 +32,13 @@
 							<p>Blog</p>
 						</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="@Url.Action("Projects","Home")">
+							<p>Projects</p>
+						</a>
+					</li>
 				</ul>
 			</div>
-			<ul class="navbar">
-				<li class="navbar-brand">
-					<img src="#" alt="HiveMind logo" width="30" height="30" />
-				</li>
-			</ul>
 		</nav>
 	</div>
 	<main>

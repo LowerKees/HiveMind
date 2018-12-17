@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiveMind", "HiveMind\HiveMind.csproj", "{07EBC523-6EE2-4D72-A4FF-EAB340F2269C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiveMind", "HiveMind\HiveMind.csproj", "{07EBC523-6EE2-4D72-A4FF-EAB340F2269C}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HiveMindDb", "HiveMindDb\HiveMindDb.sqlproj", "{F826A06B-5CDD-4319-BDC7-0FB0B84614BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,12 @@ Global
 		{07EBC523-6EE2-4D72-A4FF-EAB340F2269C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07EBC523-6EE2-4D72-A4FF-EAB340F2269C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07EBC523-6EE2-4D72-A4FF-EAB340F2269C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F826A06B-5CDD-4319-BDC7-0FB0B84614BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F826A06B-5CDD-4319-BDC7-0FB0B84614BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F826A06B-5CDD-4319-BDC7-0FB0B84614BD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F826A06B-5CDD-4319-BDC7-0FB0B84614BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F826A06B-5CDD-4319-BDC7-0FB0B84614BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F826A06B-5CDD-4319-BDC7-0FB0B84614BD}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

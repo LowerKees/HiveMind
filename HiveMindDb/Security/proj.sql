@@ -1,1 +1,1 @@
-﻿CREATE SCHEMA [proj]
+﻿CREATE SCHEMA [Proj]

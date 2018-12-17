@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{f826a06b-5cdd-4319-bdc7-0fb0b84614bd}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureDatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -58,10 +58,29 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Security" />
-    <Folder Include="proj" />
+    <Folder Include="Proj" />
+    <Folder Include="PostDepl" />
+    <Folder Include="Utils" />
+    <Folder Include="Utils\Stored Procedures" />
+    <Folder Include="PostDepl\Stored Procedures" />
+    <Folder Include="Proj\Tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Security\proj.sql" />
-    <Build Include="proj\Project.sql" />
+    <Build Include="Security\Proj.sql" />
+    <Build Include="Security\PostDepl.sql" />
+    <Build Include="Security\Utils.sql" />
+    <Build Include="Utils\Stored Procedures\HashAttributes.sql" />
+    <Build Include="PostDepl\Stored Procedures\LoadProject.sql" />
+    <Build Include="Proj\Tables\Project.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\Azure\SqlSchemas\master.dacpac">
+      <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\Azure\SqlSchemas\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+    </ArtifactReference>
   </ItemGroup>
 </Project>

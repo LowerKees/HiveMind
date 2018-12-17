@@ -13,7 +13,7 @@
 </div>
 <div class="container">
 	<div class="row">
-		<div class="col-lg-6 col-md-6">
+		<div class="col-lg-6 col-md-6 d-flex align-items-stretch">
 			<div class="card">
 				<div class="card-header">
 					<h2>Stack Integrator</h2>
@@ -31,6 +31,11 @@
 							<li>XML</li>
 						</ul>
 					</p>
+					<button class="btn btn-primary">
+						<p class="btn-text">
+							more info
+						</p>
+					</button>
 				</div>
 			</div>
 		</div>
@@ -39,18 +44,36 @@
 				<div class="card-header">
 					<h2>BattleShip</h2>
 				</div>
-			<div class="card-body">
+				<div class="card-body">
+					<p>
+						Pet project. A single player guessing game. The goal is to sink all opponent''s ships.
+						Feel free to participate to make Sql Server a Battle Ship opponent to recon with.
+						<i>(game language is Dutch)</i>
+					</p>
+					<h6>Languages:</h6>
+					<ul>
+						<li>T-SQL</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12 col-md-12">
+			<div class="extra-info-panel"></div>
+			<asp:Panel id="StackIntegratorPanel" runat="server">
+				<h1>Stack Integrator</h1>
 				<p>
-					Pet project. A single player guessing game. The goal is to sink all opponent''s ships.
-					Feel free to participate to make Sql Server a Battle Ship opponent to recon with.
-					<i>(game language is Dutch)</i>
+					Takes input dacpacs and XMLA artifacts and compares the two. Will give warnings or
+					errors based on missing tables or columns in the dacpac, based on XMLA input. It also
+					checks the XMLA file for any hard-to-check objects like logical columns.
 				</p>
-				<h6>Languages:</h6>
-				<ul>
-					<li>T-SQL</li>
-				</ul>
-			</div>
-			</div>
+				<h2>Command line tooling</h2>
+				<p>
+					Stack Integrator originates as command line tooling to incorporate into your build
+					process. Documentation on possible switches can be found on the corresponding Github page.
+				</p>
+			</asp:Panel>
 		</div>
 	</div>
 </div>

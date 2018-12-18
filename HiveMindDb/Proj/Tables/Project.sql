@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [Proj].[Project]
 (
-	[ProjectId]         INT NOT NULL PRIMARY KEY,
+	[ProjectId]         INT IDENTITY(1,1) NOT NULL CONSTRAINT PK_Project PRIMARY KEY,
 	[ProjectName]       NVARCHAR(128) NOT NULL,
 	[ProjectSummary]    NVARCHAR(500) NOT NULL,
 	[LanguagePrimary]   NVARCHAR(128) NULL,

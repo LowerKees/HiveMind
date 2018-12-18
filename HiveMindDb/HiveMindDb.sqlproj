@@ -83,4 +83,7 @@
       <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
     </ArtifactReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="HiveMindDb.publish.xml" />
+  </ItemGroup>
 </Project>

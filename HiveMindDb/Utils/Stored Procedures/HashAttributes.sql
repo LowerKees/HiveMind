@@ -75,7 +75,7 @@ AS
 			SELECT @ColumnList = CONCAT(@ColumnList + ',', CastedColumns, ', ''|''')
 			FROM #CastedData;
 
-			SET @ColumnList = CONCAT('CONCAT(', @ColumnList, ')');
+			SET @ColumnList = CONCAT('CONVERT(BINARY(32), CONCAT(', @ColumnList, '))');
 
 			-- Build update statement
 			DECLARE @Update NVARCHAR(1000);

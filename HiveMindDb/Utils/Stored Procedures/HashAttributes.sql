@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE [Utils].[HashAttributes]
 	@table_schema SYSNAME,
 	@table_name SYSNAME,
-	@ignore_columns NVARCHAR(1000)
+	@ignore_columns NVARCHAR(1000) = NULL
 AS
 	BEGIN
 		DECLARE
@@ -9,7 +9,7 @@ AS
 
 		-- Isolate neccessary metadata
 		DROP TABLE IF EXISTS #ColumnMetadata;
-		SELECT ColumName = cols.name 
+		SELECT ColumnName = cols.name 
 			, ColumnDataType = typ.name
 			, ColumnPrecision = cols.precision
 			, ColumnScale = cols.scale
@@ -41,7 +41,7 @@ AS
 		SELECT CastedColumns =  
 			CASE 
 				-- do not transfor string data types
-				WHEN src.ColumnDataType IN ('NVARCHAR','VARCHAR','NCHAR','CHAR','NTEXT','TEXT') THEN src.ColumName
+				WHEN src.ColumnDataType IN ('NVARCHAR','VARCHAR','NCHAR','CHAR','NTEXT','TEXT') THEN src.ColumnName
 				-- cast integers to nvarchar(20)
 				WHEN src.ColumnDataType IN ('TINYINT','SMALLINT','INT','BIGINT') THEN CONCAT('CAST(', src.ColumnName, ' AS NVARCHAR(20))')
 				-- cast date data type to yyyymmdd
@@ -51,7 +51,7 @@ AS
 				-- cast numerics and decimals to corresponding string
 				WHEN src.ColumnDataType IN ('DECIMAL','NUMERIC') THEN CONCAT('CAST(', src.ColumnName, ' AS NVARCHAR(39))')
 				-- cast floats and reals to corresponding string
-				WHEN src.ColumnDataType IN ('float','real') THEN CONCAT('CAST(', src.ColumName, ' AS NVARCHAR(54))')
+				WHEN src.ColumnDataType IN ('float','real') THEN CONCAT('CAST(', src.ColumnName, ' AS NVARCHAR(54))')
 				ELSE NULL
 			END
 		INTO #CastedData
@@ -68,6 +68,25 @@ AS
 					SET @msg = N'Data type from table cannot be hashed.';
 					THROW 50000, @msg, 1;
 				END
+
+			-- Build column list for hashing
+			DECLARE @ColumnList NVARCHAR(4000);
+
+			SELECT @ColumnList = CONCAT(@ColumnList + ',', CastedColumns, ', ''|''')
+			FROM #CastedData;
+
+			SET @ColumnList = CONCAT('CONCAT(', @ColumnList, ')');
+
+			-- Build update statement
+			DECLARE @Update NVARCHAR(1000);
+
+			SET @Update = CONCAT('
+				UPDATE tgt
+				SET tgt.AttributeHash = ', @ColumnList, '
+				FROM ', @table_schema, '.', @table_name, ' AS tgt;');
+
+			PRINT @Update;
+				
 		END TRY
 		BEGIN CATCH
 			DECLARE

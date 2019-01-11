@@ -10,6 +10,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFilesEx" Version="1.0.0.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" />
     <PackageReference Include="npm" Version="3.5.2" />
     <PackageReference Include="Twitter.Bootstrap" Version="3.0.1.1" />
   </ItemGroup>
@@ -21,6 +23,13 @@
   <ItemGroup>
     <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
     <Content Remove="ClientApp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\HiveMind-Styles.css" />
+    <None Include="wwwroot\images\GitHub-Mark-120px-plus.png" />
+    <None Include="wwwroot\images\GitHub-Mark-32px.png" />
+    <None Include="wwwroot\images\GitHub-Mark-64px.png" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

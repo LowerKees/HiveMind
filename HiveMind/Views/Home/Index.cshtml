@@ -2,27 +2,23 @@
 	ViewData["Title"] = "Home of the Hive Mind";
 }
 
-<app asp-prerender-module="ClientApp/dist/main-server">Loading...</app>
+<!-- impliciet staat hier section body {} -->
 
-<script src="~/dist/vendor.js" asp-append-version="true"></script>
-@section scripts {
-	<script src="~/dist/main-client.js" asp-append-version="true"></script>
-}
-<!doctype html>
-<html lang="nl-nl">
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-6 col-sm-3">
-				<p>A little paragraph goes a long way...</p>
-			</div>
-			<div class="col-md-6 col-sm-9">
-				<p>A second paragraph just makes my day!</p>
-			</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-sm-3">
+			<p>A little paragraph goes a long way...</p>
+		</div>
+		<div class="col-md-6 col-sm-9">
+			<p>A second paragraph just makes my day!</p>
 		</div>
 	</div>
-</body>
-</html>
+	<div class="row">
+		<div class="col-md-6 col-sm-3">
+			<p>Testing this</p>
+		</div>
+		<div class="col-md-6 col-sm-9">
+			<p>Testing this too</p>
+		</div>
+	</div>
+</div>

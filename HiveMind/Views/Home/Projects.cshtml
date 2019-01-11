@@ -1,0 +1,81 @@
+﻿
+@{
+	ViewData["Title"] = "Projects";
+}
+
+<div class="container">
+	<div class="jumbotron">
+		<h1 class="display-4">Projects</h1>
+		<p class="lead">Our projects help collaboration across Analytics and Data teams</p>
+		<hr class="my-2" />
+		<p>Feel free to browse, use and collaborate on each of the projects.</p>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-md-6 d-flex align-items-stretch">
+			<div class="card">
+				<div class="card-header">
+					<h2>Stack Integrator</h2>
+				</div>
+				<div class="card-body">
+					<p>
+						Our solution to checking if your Analysis Services project still connects to your
+						database project. All without having to deploy to an instance on prem, or service in
+						the Azure Cloud.
+					</p>
+					<p>
+						<h6>Languages:</h6>
+						<ul class="language-list">
+							<li>C#</li>
+							<li>XML</li>
+						</ul>
+					</p>
+					<button class="btn btn-primary">
+						<p class="btn-text">
+							more info
+						</p>
+					</button>
+					<img class="icon" src="@Url.Content("~/images/GitHub-Mark-64px.png")" alt="GitHub.com logo"/>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-6">
+			<div class="card">
+				<div class="card-header">
+					<h2>BattleShip</h2>
+				</div>
+				<div class="card-body">
+					<p>
+						Pet project. A single player guessing game. The goal is to sink all opponent''s ships.
+						Feel free to participate to make Sql Server a Battle Ship opponent to recon with.
+						<i>(game language is Dutch)</i>
+					</p>
+					<h6>Languages:</h6>
+					<ul>
+						<li>T-SQL</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12 col-md-12">
+			<div class="extra-info-panel"></div>
+			<asp:Panel id="StackIntegratorPanel" runat="server">
+				<h1>Stack Integrator</h1>
+				<p>
+					Takes input dacpacs and XMLA artifacts and compares the two. Will give warnings or
+					errors based on missing tables or columns in the dacpac, based on XMLA input. It also
+					checks the XMLA file for any hard-to-check objects like logical columns.
+				</p>
+				<h2>Command line tooling</h2>
+				<p>
+					Stack Integrator originates as command line tooling to incorporate into your build
+					process. Documentation on possible switches can be found on the corresponding Github page.
+				</p>
+			</asp:Panel>
+		</div>
+	</div>
+</div>
+

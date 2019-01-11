@@ -50,9 +50,15 @@ namespace HiveMind
 			application.UseMvc(routes =>
 			{
 				routes.MapRoute(
-			name: "default",
-			template: "{controller=Home}/{action=Index}/{id?}");
+				name: "default",
+				template: "{controller=Home}/{action=Index}/{id?}");
+
+				routes.MapRoute(
+					name: "blog",
+					template: "{controller=BlogController}/{action=Blog}");
 			});
+
+			application.UseStaticFiles();
 		}
 	}
 }

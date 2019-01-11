@@ -5,5 +5,10 @@
 /* Navbar styles */
 .navbar {
 	font-family: 'Arial';
-	font-size: 2em;
+}
+
+img.icon {
+	height:24px;
+	width:24px;
+	
 }

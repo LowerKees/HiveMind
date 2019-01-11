@@ -57,6 +57,8 @@ namespace HiveMind
 					name: "blog",
 					template: "{controller=BlogController}/{action=Blog}");
 			});
+
+			application.UseStaticFiles();
 		}
 	}
 }
